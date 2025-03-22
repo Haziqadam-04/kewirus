@@ -15,7 +15,7 @@ body {
 
 .banner img {
     width: 100%;
-    height: 500px; /* Perbaiki height biar bener */
+    height: 800px; /* Perbaiki height biar bener */
     object-fit: cover;
 }
 
