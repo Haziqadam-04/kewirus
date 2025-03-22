@@ -10,15 +10,14 @@
 body {
     background-color: #f9f9f9;
     text-align: center;
+    padding-top: 80px; /* Supaya navbar tidak menutupi konten */
 }
 
 .banner img {
-    width: 100%; /* Bisa diganti dengan px atau % */
-    height: 500; /* Biar proporsinya tetap terjaga */
-    object-fit: cover; /* Supaya gambar tidak terdistorsi */
-    
+    width: 100%;
+    height: 500px; /* Perbaiki height biar bener */
+    object-fit: cover;
 }
-
 
 /* Navbar */
 nav {
@@ -66,31 +65,28 @@ nav ul li a {
     right: -10px;
 }
 
-
-
 /* Produk Grid */
 .products {
     text-align: center;
     padding: 80px 20px 50px;
-    
 }
 
 .products h2 {
-    margin-bottom: 30px; /* Menambahkan jarak ke bawah */
+    margin-bottom: 30px;
     font-size: 24px;
     font-weight: bold;
 }
 
 .product-container {
-    max-width: 1100px; /* Lebar maksimal supaya nggak terlalu melebar */
-    margin: 0 auto; /* Biar tetap di tengah */
-    padding: 0 40px; /* Tambah jarak dari kanan & kiri */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .product-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 produk dalam satu baris */
-    gap: 30px; /* Jarak antar produk */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     justify-content: center;
 }
 
@@ -111,6 +107,7 @@ nav ul li a {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+    aspect-ratio: 1 / 1; /* Supaya gambar nggak ketarik */
 }
 
 /* Tombol Tambah ke Keranjang */
@@ -123,6 +120,10 @@ nav ul li a {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+}
+
+.product button:hover {
+    background: #e60073; /* Warna lebih gelap pas hover */
 }
 
 /* Modal Popup (QRIS & Form Identitas) */
@@ -158,6 +159,7 @@ nav ul li a {
     cursor: pointer;
 }
 
+/* Footer */
 footer {
     background-color: #f8f8f8;
     padding: 40px 20px;
@@ -242,7 +244,7 @@ footer {
 
 /* Supaya QRIS modal tidak muncul otomatis */
 #qris-modal {
-    display: none; /* Hidden secara default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -277,7 +279,7 @@ footer {
 /* Supaya modal Isi Data Diri & Keranjang tidak muncul otomatis */
 #cart-modal,
 #identity-modal {
-    display: none; /* Hidden saat awal */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -324,7 +326,7 @@ footer {
     }
 
     nav ul {
-        flex-direction: row; /* Menjaga menu tetap dalam satu baris */
+        flex-direction: row;
         gap: 15px;
         padding-top: 0;
     }
@@ -337,11 +339,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Supaya konten tidak tertutup navbar */
-    body {
-        padding-top: 60px; /* Sesuaikan dengan tinggi navbar */
-    }
-
     /* Banner */
     .banner img {
         height: 200px;
@@ -349,7 +346,7 @@ footer {
 
     /* Menampilkan 2 produk per baris */
     .product-list {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Ukuran gambar produk di HP */
@@ -363,3 +360,4 @@ footer {
         padding: 8px;
     }
 }
+
