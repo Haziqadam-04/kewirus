@@ -12,19 +12,13 @@ body {
     text-align: center;
 }
 
-/* Judul Utama */
-.main-title {
-    font-size: 3.5em; /* Ukuran lebih besar biar jelas */
-    font-weight: bold;
-    margin: 50px 0 30px; /* Tambah jarak ke bawah */
-    text-align: center;
-    position: relative;
-    z-index: 10; /* Supaya tetap di atas elemen lain */
-    background: white; /* Tambahin background biar lebih jelas */
-    padding: 15px 20px; /* Tambahin padding */
-    display: inline-block; /* Biar padding cuma di sekitar teks */
-    border-radius: 10px; /* Biar ada sedikit sudut rounded */
+.banner img {
+    width: 100%; /* Bisa diganti dengan px atau % */
+    height: 500; /* Biar proporsinya tetap terjaga */
+    object-fit: cover; /* Supaya gambar tidak terdistorsi */
+    
 }
+
 
 /* Navbar */
 nav {
@@ -72,17 +66,19 @@ nav ul li a {
     right: -10px;
 }
 
-/* Banner */
-.banner img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+
 
 /* Produk Grid */
 .products {
     text-align: center;
     padding: 80px 20px 50px;
+    
+}
+
+.products h2 {
+    margin-bottom: 30px; /* Menambahkan jarak ke bawah */
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .product-container {
