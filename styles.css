@@ -315,31 +315,51 @@ footer {
         font-size: 2em;
     }
 
-    .product-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 produk per baris di layar kecil */
-    }
-
+    /* Navbar agar tidak mengganggu tampilan */
     nav {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px 0;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
-        padding-top: 10px;
+        flex-direction: row; /* Menjaga menu tetap dalam satu baris */
+        gap: 15px;
+        padding-top: 0;
     }
 
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    /* Supaya konten tidak tertutup navbar */
+    body {
+        padding-top: 60px; /* Sesuaikan dengan tinggi navbar */
+    }
+
+    /* Banner */
     .banner img {
         height: 200px;
     }
 
+    /* Menampilkan 2 produk per baris */
     .product-list {
-        grid-template-columns: 1fr; /* Biar di HP satu kolom */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
+    /* Ukuran gambar produk di HP */
     .product img {
-        height: 150px;
+        height: 180px;
+    }
+
+    /* Supaya tombol "Tambah ke Keranjang" tetap proporsional */
+    .product button {
+        font-size: 14px;
+        padding: 8px;
     }
 }
