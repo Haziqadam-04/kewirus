@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Ease Hijab Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("user_id"); // Ganti dengan User ID dari EmailJS
+    </script>
+    
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://wa.me/6281386623741" target="_blank">Contact</a></li>
+                <li><a href="solution.html">Solution</a></li>
+            </ul>
+        </nav>
+    </header>
+  <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-image: url('image/4ease.jpeg');
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        background-position: top left;
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+      
+    #app {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    button:hover {
+      background-color: #5a4ecf;
+    }
+
+    #result {
+      background-color: #f0f2ff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      line-height: 1.6;
+    }
+
+    #result h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    #result p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const app = document.getElementById('app');
+
+    app.innerHTML = `
+      <h1>Quiz Gaya Personal</h1>
+      <form id="quizForm">
+        <label>🌈 Warna favorit kamu?<br><input type="text" name="color" required></label><br><br>
+        <label>😊 Bentuk wajah kamu?<br>
+          <select name="faceShape" required>
+            <option value="oval">Oval</option>
+            <option value="round">Bulat</option>
+            <option value="square">Kotak</option>
+          </select>
+        </label><br><br>
+        <label>🧠 Gimana kepribadian kamu?<br>
+          <select name="personality" required>
+            <option value="minimalis">Minimalis</option>
+            <option value="chic">Chic</option>
+            <option value="feminine">Feminine</option>
+            <option value="sporty">Sporty</option>
+            <option value="elegan">Elegan</option>
+            <option value="kreatif">Kreatif</option>
+          </select>
+        </label><br><br>
+        <label>🏃 Aktivitas harian kamu lebih ke?<br>
+          <select name="activity" required>
+            <option value="kuliah">Kuliah</option>
+            <option value="kerja">Kerja</option>
+            <option value="rumah">Di rumah</option>
+            <option value="jalan">Hangout</option>
+          </select>
+        </label><br><br>
+        <button type="submit">Lihat Rekomendasi ✨</button>
+      </form>
+      <div id="result"></div>
+    `;
+
+    const quizForm = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+
+    quizForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const color = quizForm.color.value;
+      const faceShape = quizForm.faceShape.value;
+      const personality = quizForm.personality.value;
+      const activity = quizForm.activity.value;
+
+      let modelHijab = '';
+      let look = '';
+      let shapeNote = '';
+
+      switch (personality) {
+        case 'minimalis':
+          modelHijab = 'Pashmina polos, segi empat basic, atau instan simple';
+          look = 'Warna netral seperti beige, abu-abu, atau putih sangat cocok. Gaya clean dan effortless!';
+          break;
+        case 'chic':
+          modelHijab = 'Hijab plisket, turban modern, atau voal dengan aksen bold';
+          look = 'Cocok dengan warna maroon, navy, atau mustard. Gaya kamu modis dan trendi!';
+          break;
+        case 'feminine':
+          modelHijab = 'Hijab motif floral, bahan satin, atau organza lembut';
+          look = 'Warna soft seperti pink pastel, lilac, atau baby blue membuat look kamu makin manis!';
+          break;
+        case 'sporty':
+          modelHijab = 'Hijab instan sporty, ciput ninja, atau bergo stylish';
+          look = 'Pilih warna yang nyaman dan adem seperti olive, hitam, atau biru laut. Cocok buat kamu yang aktif!';
+          break;
+        case 'elegan':
+          modelHijab = 'Satin silk, segi empat premium, atau turban satin';
+          look = 'Warna deep seperti emerald, hitam pekat, atau gold cocok untuk tampil classy dan glamor!';
+          break;
+        case 'kreatif':
+          modelHijab = 'Hijab motif unik, tie dye, atau print art';
+          look = 'Warna kontras dan motif playful seperti oranye, ungu, atau kombinasi artistik bikin kamu standout!';
+          break;
+        default:
+          modelHijab = 'Pilih model hijab yang kamu suka dan nyaman kamu pakai';
+          look = 'Ekspresikan dirimu dengan warna favoritmu!';
+      }
+
+      switch (faceShape) {
+        case 'oval':
+          shapeNote = 'Wajah oval cocok pakai model hijab apapun! Bebas eksplor gaya ✨';
+          break;
+        case 'round':
+          shapeNote = 'Coba hijab yang sedikit tinggi di atas dahi dan hindari terlalu ketat agar wajah tampak lebih tirus.';
+          break;
+        case 'square':
+          shapeNote = 'Gunakan hijab berbahan lembut dan bentuk melengkung di sekitar wajah untuk kesan lebih halus.';
+          break;
+        default:
+          shapeNote = '';
+      }
+
+      resultDiv.innerHTML = `
+        <h2>✨ Hasil Quiz Kamu ✨</h2>
+        <p><strong>Model Hijab:</strong> ${modelHijab}</p>
+        <p><strong>Warna Rekomendasi:</strong> ${color}</p>
+        <p><strong>Inspirasi Look:</strong> ${look}</p>
+        <p><strong>Tips Sesuai Bentuk Wajah:</strong> ${shapeNote}</p>
+        <p><em>Kami akan kirim rekomendasi produk hijab tiap minggu ke email atau WhatsApp kamu!</em></p>
+        <button onclick="saveResult()">Simpan Hasil</button>
+      `;
+    });
+
+    function saveResult() {
+      alert("Hasil kamu berhasil disimpan! Kami akan kirim update ke kamu secara personal 💌");
+    }
+  </script>
+</body>
+</html>
