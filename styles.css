@@ -13,6 +13,7 @@ body {
     padding-top: 80px; /* Supaya navbar tidak menutupi konten */
 }
 
+/* Banner */
 .banner img {
     width: 100%;
     height: 800px; /* Perbaiki height biar bener */
@@ -46,7 +47,34 @@ nav ul li a {
     font-weight: 600;
 }
 
-/* Logo Keranjang */
+/* Dropdown Solution */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #111;
+}
+
 #cart-icon {
     position: relative;
     color: white;
@@ -341,7 +369,6 @@ footer {
 
     /* Banner */
     .banner img {
-        width: 100%;
         height: 200px;
     }
 
